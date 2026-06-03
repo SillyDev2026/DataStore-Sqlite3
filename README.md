@@ -34,7 +34,7 @@ DATA FORMAT
 --------------------------------
 
 Each player is stored like:
-
+```lua
 {
   "value": {
     "Coins": 100,
@@ -43,7 +43,7 @@ Each player is stored like:
   "username": "PlayerName",
   "updated": 1710000000
 }
-
+```
 --------------------------------
 SETUP
 --------------------------------
@@ -57,41 +57,42 @@ local PlayerStore = Store.new("GameData", "Players")
 
 --------------------------------
 2. GET PLAYER DATA
-
+```lua
 local data = PlayerStore:Get(player.UserId)
 
 if data then
     print(data.Coins)
 end
-
+```
 
 --------------------------------
 3. SET PLAYER DATA
-
+```lua
 PlayerStore:Set(player.UserId, {
     Coins = 100,
     Level = 2
 }, player.Name)
-
+```
 
 --------------------------------
 4. UPDATE PLAYER DATA
-
+```lua
 PlayerStore:Update(player.UserId, function(current)
     current.Coins += 10
     return current
 end)
-
+```
 
 --------------------------------
 DEFAULT DATA TEMPLATE
 --------------------------------
-
+```lua
 local DEFAULT_DATA = {
     Coins = 0,
     Level = 1,
     Inventory = {}
 }
+```
 
 
 --------------------------------
@@ -99,7 +100,7 @@ PLAYER HANDLING (RECOMMENDED)
 --------------------------------
 
 PlayerAdded:
-
+```lua
 Players.PlayerAdded:Connect(function(player)
     local data = PlayerStore:Get(player.UserId)
 
@@ -108,10 +109,10 @@ Players.PlayerAdded:Connect(function(player)
         PlayerStore:Set(player.UserId, data, player.Name)
     end
 end)
-
+```
 
 PlayerRemoving:
-
+```lua
 Players.PlayerRemoving:Connect(function(player)
     local data = PlayerStore:Get(player.UserId)
 
@@ -119,7 +120,7 @@ Players.PlayerRemoving:Connect(function(player)
         PlayerStore:Set(player.UserId, data, player.Name)
     end
 end)
-
+```
 
 --------------------------------
 LOCAL CACHE SYSTEM
