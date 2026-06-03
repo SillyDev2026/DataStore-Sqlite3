@@ -173,7 +173,13 @@ USE CASES
 - Game analytics
 - Persistent multiplayer saves
 - Sends to a open source DataStore Explorer link
+#Link to DataStore Explorer
+------------------------------------------------------------------
 [DataStore-Explorer](https://sillydev2026.github.io/DataStore.io/)
+------------------------------------------------------------------
+#Link to Release for Packages to run ur backend api and choose ur own DataName and other things
+-----------------------------------------------------------------------------------------------------------------------------------
+[Link to Packages must creata a folder to run the backend Flask Server and Express/Cors Server for handling the DataStore-Explorer](https://github.com/SillyDev2026/DataStore.io/releases/tag/DataStoreforRoblox)
 
 --------------------------------
 END
